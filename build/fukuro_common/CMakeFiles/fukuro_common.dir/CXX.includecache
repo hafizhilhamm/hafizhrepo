@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hafizh/magang2/src/fukuro_common/include/kalmanfilter.h
+eigen3/Eigen/Core
+-
+eigen3/Eigen/Dense
+-
+random
+-
+stdio.h
+-
+iostream
+-
+
+/home/hafizh/magang2/src/fukuro_common/src/kalmanfilter.cpp
+kalmanfilter.h
+-
+

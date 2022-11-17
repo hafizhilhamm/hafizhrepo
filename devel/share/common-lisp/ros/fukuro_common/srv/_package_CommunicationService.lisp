@@ -1,0 +1,12 @@
+(cl:in-package fukuro_common-srv)
+(cl:export '(CONNECT-VAL
+          CONNECT
+          ADDRESS-VAL
+          ADDRESS
+          TX_PORT-VAL
+          TX_PORT
+          RX_PORT-VAL
+          RX_PORT
+          SUCCESS-VAL
+          SUCCESS
+))

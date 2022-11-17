@@ -1,0 +1,8 @@
+prefix=/home/hafizh/magang2/install
+
+Name: fukuro_common
+Description: Description of fukuro_common
+Version: 0.1.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lfukuro_common
+Requires: roscpp std_msgs

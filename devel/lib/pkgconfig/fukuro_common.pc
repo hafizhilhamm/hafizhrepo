@@ -1,0 +1,8 @@
+prefix=/home/hafizh/magang2/devel
+
+Name: fukuro_common
+Description: Description of fukuro_common
+Version: 0.1.0
+Cflags: -I/home/hafizh/magang2/devel/include -I/home/hafizh/magang2/src/fukuro_common/include
+Libs: -L${prefix}/lib -lfukuro_common
+Requires: roscpp std_msgs

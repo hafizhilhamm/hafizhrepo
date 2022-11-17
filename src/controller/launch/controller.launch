@@ -1,0 +1,7 @@
+<launch>
+    <arg name="stm" default="/dev/ttyACM0"/>
+    <!-- <include file="$(find controller)/launch/serial.launch"/>    -->
+    <node name="high_level_controller_node" type="high_level_controller" pkg="controller" required="true" output="screen"/>
+    <node name="low_level_controller_node" type="low_level_controller" pkg="controller" required="true" />
+    <node name="robot_controller_node" type="robot_controller" pkg="controller" required="true"/>
+</launch>

@@ -1,0 +1,203 @@
+; Auto-generated. Do not edit!
+
+
+(cl:in-package fukuro_common-msg)
+
+
+;//! \htmlinclude MotorParameter.msg.html
+
+(cl:defclass <MotorParameter> (roslisp-msg-protocol:ros-message)
+  ((n_speed
+    :reader n_speed
+    :initarg :n_speed
+    :type cl:fixnum
+    :initform 0)
+   (motor1
+    :reader motor1
+    :initarg :motor1
+    :type (cl:vector cl:float)
+   :initform (cl:make-array 0 :element-type 'cl:float :initial-element 0.0))
+   (motor2
+    :reader motor2
+    :initarg :motor2
+    :type (cl:vector cl:float)
+   :initform (cl:make-array 0 :element-type 'cl:float :initial-element 0.0))
+   (motor3
+    :reader motor3
+    :initarg :motor3
+    :type (cl:vector cl:float)
+   :initform (cl:make-array 0 :element-type 'cl:float :initial-element 0.0)))
+)
+
+(cl:defclass MotorParameter (<MotorParameter>)
+  ())
+
+(cl:defmethod cl:initialize-instance :after ((m <MotorParameter>) cl:&rest args)
+  (cl:declare (cl:ignorable args))
+  (cl:unless (cl:typep m 'MotorParameter)
+    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name fukuro_common-msg:<MotorParameter> is deprecated: use fukuro_common-msg:MotorParameter instead.")))
+
+(cl:ensure-generic-function 'n_speed-val :lambda-list '(m))
+(cl:defmethod n_speed-val ((m <MotorParameter>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader fukuro_common-msg:n_speed-val is deprecated.  Use fukuro_common-msg:n_speed instead.")
+  (n_speed m))
+
+(cl:ensure-generic-function 'motor1-val :lambda-list '(m))
+(cl:defmethod motor1-val ((m <MotorParameter>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader fukuro_common-msg:motor1-val is deprecated.  Use fukuro_common-msg:motor1 instead.")
+  (motor1 m))
+
+(cl:ensure-generic-function 'motor2-val :lambda-list '(m))
+(cl:defmethod motor2-val ((m <MotorParameter>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader fukuro_common-msg:motor2-val is deprecated.  Use fukuro_common-msg:motor2 instead.")
+  (motor2 m))
+
+(cl:ensure-generic-function 'motor3-val :lambda-list '(m))
+(cl:defmethod motor3-val ((m <MotorParameter>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader fukuro_common-msg:motor3-val is deprecated.  Use fukuro_common-msg:motor3 instead.")
+  (motor3 m))
+(cl:defmethod roslisp-msg-protocol:serialize ((msg <MotorParameter>) ostream)
+  "Serializes a message object of type '<MotorParameter>"
+  (cl:let* ((signed (cl:slot-value msg 'n_speed)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    )
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'motor1))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((bits (roslisp-utils:encode-double-float-bits ele)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream)))
+   (cl:slot-value msg 'motor1))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'motor2))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((bits (roslisp-utils:encode-double-float-bits ele)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream)))
+   (cl:slot-value msg 'motor2))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'motor3))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((bits (roslisp-utils:encode-double-float-bits ele)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream)))
+   (cl:slot-value msg 'motor3))
+)
+(cl:defmethod roslisp-msg-protocol:deserialize ((msg <MotorParameter>) istream)
+  "Deserializes a message object of type '<MotorParameter>"
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'n_speed) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'motor1) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'motor1)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
+    (cl:setf (cl:aref vals i) (roslisp-utils:decode-double-float-bits bits))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'motor2) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'motor2)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
+    (cl:setf (cl:aref vals i) (roslisp-utils:decode-double-float-bits bits))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'motor3) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'motor3)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
+    (cl:setf (cl:aref vals i) (roslisp-utils:decode-double-float-bits bits))))))
+  msg
+)
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<MotorParameter>)))
+  "Returns string type for a message object of type '<MotorParameter>"
+  "fukuro_common/MotorParameter")
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql 'MotorParameter)))
+  "Returns string type for a message object of type 'MotorParameter"
+  "fukuro_common/MotorParameter")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<MotorParameter>)))
+  "Returns md5sum for a message object of type '<MotorParameter>"
+  "8645ce99acc3de9f5817e6d22e97aae7")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'MotorParameter)))
+  "Returns md5sum for a message object of type 'MotorParameter"
+  "8645ce99acc3de9f5817e6d22e97aae7")
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<MotorParameter>)))
+  "Returns full string definition for message of type '<MotorParameter>"
+  (cl:format cl:nil "int8 n_speed~%float64[] motor1~%float64[] motor2~%float64[] motor3~%~%"))
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'MotorParameter)))
+  "Returns full string definition for message of type 'MotorParameter"
+  (cl:format cl:nil "int8 n_speed~%float64[] motor1~%float64[] motor2~%float64[] motor3~%~%"))
+(cl:defmethod roslisp-msg-protocol:serialization-length ((msg <MotorParameter>))
+  (cl:+ 0
+     1
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'motor1) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 8)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'motor2) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 8)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'motor3) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 8)))
+))
+(cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <MotorParameter>))
+  "Converts a ROS message object to a list"
+  (cl:list 'MotorParameter
+    (cl:cons ':n_speed (n_speed msg))
+    (cl:cons ':motor1 (motor1 msg))
+    (cl:cons ':motor2 (motor2 msg))
+    (cl:cons ':motor3 (motor3 msg))
+))
